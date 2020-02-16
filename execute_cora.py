@@ -33,8 +33,13 @@ print('residual: ' + str(residual))
 print('nonlinearity: ' + str(nonlinearity))
 print('model: ' + str(model))
 
-adj, features, y_train, y_val, y_test, train_mask, val_mask, test_mask = process.load_data(dataset)
-features, spars = process.preprocess_features(features)
+features = sp.load_npz('data/nell/normfeatures.npz')### sparse matrix normfeatures
+adj = sp.load_npz('data/nell/normadj.npz') ### sparse matrix not tuple normadj
+y_train = np.load('data/nell/y_train.npy')
+y_val = np.load('data/nell/y_val.npy')
+y_test = np.load('data/nell/y_test.npy')
+#adj, features, y_train, y_val, y_test, train_mask, val_mask, test_mask = process.load_data(dataset)
+#features, spars = process.preprocess_features(features)
 
 nb_nodes = features.shape[0]
 ft_size = features.shape[1]
