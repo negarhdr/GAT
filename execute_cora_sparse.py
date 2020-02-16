@@ -44,6 +44,8 @@ adj = sp.load_npz('data/nell/normadj.npz') ### sparse matrix not tuple normadj
 y_train = np.load('data/nell/y_train.npy')
 y_val = np.load('data/nell/y_val.npy')
 y_test = np.load('data/nell/y_test.npy')
+features = sparse_to_tuple(features)
+adj = sparse_to_tuple(adj)
 
 #adj, features, y_train, y_val, y_test, train_mask, val_mask, test_mask = process.load_data(dataset)
 #features, spars = process.preprocess_features(features)
